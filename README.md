@@ -23,7 +23,66 @@
 
 
 
+## AT COMMANDS
+The command format is: AT+PARAMETER=<SF>,<BW>,<CR>,<Preamble>
 
+SF (Spreading Factor) = 5 ~ 11
+
+Higher values (like 11) increase range but reduce speed
+Lower values (like 5) increase speed but reduce range
+Values:
+
+SF=5: Fastest data rate, shortest range
+SF=7: ↓
+SF=8: ↓
+SF=9: ↓
+SF=10: ↓
+SF=11: Slowest data rate, longest range
+
+
+
+
+BW (Bandwidth) = 7 ~ 9
+Values:
+7: 125KHZ
+8: 250KHZ
+9: 500KHZ
+Lower bandwidth (like 0) = longer range but slower speed
+Higher bandwidth (like 9) = shorter range but faster speed
+
+
+CR (Coding Rate) = 1
+Values: 1 to 4
+CR=1: 4/5 coding rate
+CR=2: 4/6 coding rate
+CR=3: 4/7 coding rate
+CR=4: 4/8 coding rate
+Higher values provide more error correction but reduce effective data rate
+
+
+Preamble = 4 ~ 24
+
+Range: 4 to 7
+Length of the preamble signal
+Longer preamble helps with synchronization but adds overhead
+
+
+
+In our code, we used AT+PARAMETER=12,7,1,7 which means:
+
+SF=12: Maximum range (but slowest speed)
+BW=7: 125 kHz bandwidth (good balance)
+CR=1: 4/5 coding rate (minimal error correction)
+Preamble=7: Maximum preamble length
+
+If you want:
+
+Longer range: Increase SF, decrease BW
+Faster speed: Decrease SF, increase BW
+Better error correction: Increase CR
+Better synchronization: Increase Preamble
+
+Would you like me to provide some common parameter combinations for different use cases?
 
 
 
