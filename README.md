@@ -1,7 +1,34 @@
 # LoRa PJT
 ## Goal
 - LoRa 통신 활용할 수 있는 코드 탬플릿 개발
+## HW
+1. ESP32
+2. "Reyax rylr998" lora 모듈
+3. 이후 stm32 평가보드와 진행 예정
 
+## 참고 링크
+[esp32 - lora](https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/)
+
+## 관련 국내법령
+**국내 주파수는 920.9 - 923.3 MHz**
+
+## 통신 프로토콜
+- UART
+
+
+
+## 스위치
+- 위 y = 1023
+- 좌 x = 1023
+
+
+
+
+
+
+
+
+# 이하 폐기 버전
 ## HW
 - Lilygo T3S3 Board with SX1276 radio chip
 
