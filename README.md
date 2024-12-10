@@ -9,12 +9,35 @@
 ## 참고 링크
 [esp32 - lora](https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/)
 
+[arduino - lora](https://www.youtube.com/watch?v=LiWlPERp1ec&t=220s)
+
 ## 관련 국내법령
 **국내 주파수는 920.9 - 923.3 MHz**
 
 ## 통신 프로토콜
 - UART
 
+## LoRa 모듈 세팅 현황
+### 초기화 및 세팅 절차
+1. AT
+2. AT+RESET
+3. AT+MODE=0
+4. AT+IPR=9600
+5. AT+BAND=923000000M
+6. AT+PARAMETER=7,9,4,7
+7. AT+ADDRESS=주소
+8. AT+NETWORKID=6
+9. AT+CRFOP=12
+
+
+
+### A : Transmitter
+- 주소 = 2
+- ESP32와 연결
+
+### B : Receiver
+- 주소 = 3
+- Arduino Nano 33 ble와 연결
 
 
 ## 스위치
@@ -84,7 +107,8 @@ Better synchronization: Increase Preamble
 
 Would you like me to provide some common parameter combinations for different use cases?
 
-
+## Receiving Data
+**+RCV = \<Address>, \<Length>, \<Data>, \<RSSI>, \<SNR>**
 
 
 # 이하 폐기 버전
