@@ -36,8 +36,9 @@
 - ESP32와 연결
 
 ### B : Receiver
-- 주소 = 3
+- 주소 = 1
 - Arduino Nano 33 ble와 연결
+- NETWORKID = 5
 
 
 ## 스위치
