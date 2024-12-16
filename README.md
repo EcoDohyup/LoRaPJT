@@ -11,6 +11,8 @@
 
 [arduino - lora](https://www.youtube.com/watch?v=LiWlPERp1ec&t=220s)
 
+[Espanol](https://proyectocorrecaminos.com/como-usar-modulos-lora-con-esp32/)
+
 ## 관련 국내법령
 **국내 주파수는 920.9 - 923.3 MHz**
 
