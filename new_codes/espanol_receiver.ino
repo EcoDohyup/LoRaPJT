@@ -17,22 +17,28 @@ String snr;
 void sendCmd(String cmd)
 {
   Serial2.println(cmd);  // Enviar string cmd a módulo LoRa
-  delay(100);  // Esperar 500ms a que el módulo reciba el comando
+  delay(500);  // Esperar 500ms a que el módulo reciba el comando
   while (Serial2.available()) {
     Serial.print(char(Serial2.read()));  // Si hay respuesta imprimirla en el monitor serial 
   }
 }
 void setup() {
-  Serial.begin(115200);  // Iniciar el monitor serial a 115200 baudios
-  Serial2.begin(115200, SERIAL_8N1, RXD2, TXD2);  // Iniciar el Serial2 a 115200
+  Serial.begin(9600);  // Iniciar el monitor serial a 115200 baudios
+  Serial2.begin(9600, SERIAL_8N1, RXD2, TXD2);  // Iniciar el Serial2 a 115200
   delay(3000);
-  Serial.println("Configurando parámetros antena LoRa");
+  Serial.println("LoRa 파라미터 설정");
   delay(1000);
   sendCmd("AT+ADDRESS=2");  // Configurar el address a 2
   delay(1000);
   sendCmd("AT+NETWORKID=5");  // Configurar el Network ID a 5
   delay(1000);
+  sendCmd("AT+BAND=922100000,M");
+  delay(1000);
+  sendCmd("AT+PARAMETER=7,9,4,12"); // 제일 중요, 마지막 매개변수는 네트워크 아이디가 18이 아니면 무조건 12 고정, 나머지는 4~24 가능
+  delay(1000);
   sendCmd("AT+BAND?");  // Leer la frecuencia configurada
+  delay(1000);
+  sendCmd("AT+ADDRESS?");  //
   delay(1000);
   sendCmd("AT+PARAMETER?");  // Leer los parámetros configurados
   delay(1000);

@@ -13,6 +13,8 @@
 
 [Espanol](https://proyectocorrecaminos.com/como-usar-modulos-lora-con-esp32/)
 
+[dht - lora](https://www.youtube.com/watch?v=RlHBXawVIb8)
+
 ## 관련 국내법령
 **국내 주파수는 920.9 - 923.3 MHz**
 

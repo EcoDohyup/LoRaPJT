@@ -14,16 +14,26 @@ void sendCmd(String cmd)
 }
 
 void setup() {
-  Serial.begin(115200);  // Iniciar el monitor serial a 115200 baudios
-  Serial2.begin(115200, SERIAL_8N1, RXD2, TXD2);  // Iniciar el Serial2 a 115200
+  Serial.begin(9600);  // Iniciar el monitor serial a 115200 baudios
+  Serial2.begin(9600, SERIAL_8N1, RXD2, TXD2);  // Iniciar el Serial2 a 115200
   delay(3000);
-  Serial.println("Configurando parámetros antena LoRa");
+  Serial.println("LoRa 파라미터 설정");
   delay(1000);
-  sendCmd("AT+ADDRESS=1");  // Configurar el address a 1
+  sendCmd("AT+ADDRESS=1");  // 자기 주소 1로 설정
   delay(1000);
-  sendCmd("AT+NETWORKID=5");  // Configurar el Network ID a 5
+  sendCmd("AT+NETWORKID=5");  // 네트워크 아이디 5로 설정
   delay(1000);
-  sendCmd("AT+BAND?");  // Leer la frecuencia configurada
+  sendCmd("AT+BAND=922100000,M");
+  delay(1000);
+  sendCmd("AT+PARAMETER=7,9,4,12");
+  delay(1000);
+  sendCmd("AT+BAND?");  // 주파수 체크
+  delay(1000);
+  sendCmd("AT+CRFOP?");  // 신호 발신 세기 체크
+  delay(1000);
+  sendCmd("AT+ADDRESS?");  // 
+  delay(1000);
+  sendCmd("AT+NETWORKID?");  // 
   delay(1000);
   sendCmd("AT+PARAMETER?");  // Leer los parámetros configurados
   delay(1000);
